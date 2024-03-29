@@ -16,6 +16,8 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
-
+gowatch.yml
+cronjob/CronJob
+server/deluluBot
 # Go workspace file
 go.work
