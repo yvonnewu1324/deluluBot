@@ -15,13 +15,14 @@ func main() {
 
 	// Init line bot with http client
 	client := &http.Client{}
+	// Do delulu CronJob
+	http.HandleFunc("/delulu-cronjob", helper.NewCronJobHandler())
 	bot, err := linebot.New(viper.GetString("CHANNELSECRET"), viper.GetString("CHANNELTOKEN"), linebot.WithHTTPClient(client))
 	if err != nil {
 		fmt.Println("Init Bot Error:", err)
 	}
 	// Setup HTTP Server for receiving requests from LINE platform
 	http.HandleFunc("/callback", helper.NewHttpHandler(bot))
-
 	// Set server port
 	port := viper.GetInt("PORT")
 	fmt.Printf("Server is running on :%d\n", port)
