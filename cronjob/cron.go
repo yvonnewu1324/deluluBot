@@ -30,7 +30,7 @@ func main() {
 	messages = append(messages, m)
 	_, err = bot.PushMessage(viper.GetString("GROUPID"), messages...).Do()
 	if err != nil {
-		helper.LogError("Send Chores Notify Error", err)
+		helper.LogError("Send Delulu Notify Error", err)
 		return
 	}
 }

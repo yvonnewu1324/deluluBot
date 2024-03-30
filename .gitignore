@@ -22,3 +22,4 @@ cronjob/CronJob
 server/deluluBot
 # Go workspace file
 go.work
+.vercel
